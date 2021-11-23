@@ -2,7 +2,11 @@
   <section>
       <img src="@/assets/dc-comics-assets/img/header/dc-logo.png" alt="">
       <nav>
-
+          <ul>
+              <li class="nav_link" v-for="(link, index) in navLinks" :key="`nav_link-${index}`">
+                  <a :href="`${link.url}`">{{link.text}}</a>
+              </li>
+          </ul>
       </nav>
   </section>
 </template>
@@ -14,13 +18,59 @@ export default {
         return {
             navLinks: [
                 {
-                    text: '',
-                    url: '',
+                    text: 'Characters',
+                    url: '/characters',
                     current: true,
+                },
+                {
+                    text: 'Comics',
+                    url: '/comics',
+                    current: false,
+                },
+                {
+                    text: 'movies',
+                    url: '/movies',
+                    current: false,
+                },
+                {
+                    text: 'tv',
+                    url: '/tv',
+                    current: false,
+                },
+                {
+                    text: 'games',
+                    url: '/games',
+                    current: false,
+                },
+                {
+                    text: 'collectibles',
+                    url: '/collectibles',
+                    current: false,
+                },
+                {
+                    text: 'videos',
+                    url: '/videos',
+                    current: false,
+                },
+                {
+                    text: 'fans',
+                    url: '/fans',
+                    current: false,
+                },
+                {
+                    text: 'news',
+                    url: '/news',
+                    current: false,
+                },
+                {
+                    text: 'shop',
+                    url: '/shop',
+                    current: false,
                 },
             ],
             merchBar: [],
             footerLink: [],
+            currentPage: 0,
         };
     },
 }
@@ -35,8 +85,30 @@ export default {
 
         nav {
             height: 100%;
-            width: 50%;
-            background-color: red;
+            width: 60%;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 100%;
+            }
+            li {
+                display: flex;
+                align-items: center;
+                text-transform: uppercase;
+                height: 100%;
+                margin-inline: 10px;
+                border-bottom: 3px solid transparent;
+                &:hover {
+                    border-bottom-color: #0282f9;
+                    cursor: pointer;
+                }
+                a {
+                    text-decoration: none;
+                    color: currentColor;
+                }
+            }
         }
     }
 </style>
