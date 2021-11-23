@@ -1,5 +1,5 @@
 <template>
-  <section>
+    <section class="container">
       <img src="@/assets/dc-comics-assets/img/header/dc-logo.png" alt="">
       <nav>
           <ul>
