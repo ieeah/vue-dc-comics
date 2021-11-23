@@ -77,11 +77,13 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    section {
+    .container {
         display: flex;
         justify-content: space-between;
-        padding-block: 15px;
         height: 100px;
+        img {
+            padding-block: 15px;
+        }
 
         nav {
             height: 100%;
