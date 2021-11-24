@@ -7,11 +7,12 @@
       <div class="floating_title">
         <h2>CURRENT SERIES</h2>
       </div>
-      <ul>
+      <ul class="magazines_list">
         <li v-for="(magazine, i) in CurrentSeries" :key="`magazine_${i}`">
           <Comiccard :url="magazine.thumb" :title="magazine.series"/>
         </li>
       </ul>
+            <a href="" class="load_more_btn">LOAD MORE</a>
     </section>
   </section>
 </template>
@@ -37,7 +38,7 @@ export default {
 @import '@/styles/vars.scss';
     .container_full {
           width: 100vw;
-          background-color: black;
+          background-color: #1c1c1c;
           color: white;
           .jumbo {
             height: 400px;
@@ -51,20 +52,41 @@ export default {
 
         .container.current_series {
           display: flex;
+          flex-direction: column;
           margin-inline: auto;
+          align-items: center;
           width: 70%;
-          height: 150px;
-          background-color: yellow;
+          position: relative;
+          padding-top: 50px;
             .floating_title {
               background-color: $brand-color;
               padding: 8px 20px;
               height: 60px;
-              width: 230px;
               display: flex;
               justify-content: center;
               align-items: center;
               font-size: 1.3rem;
-              transform: translateX(-20px) translateY(-85%);
+              position: absolute;
+              left: -20px;
+              top: -30px;
+              
+            }
+            ul.magazines_list {
+                width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              li {
+                display: inline-block;
+                width: calc(100% / 6);
+                padding: 8px;
+              }
+            }
+            .load_more_btn {
+                text-decoration: none;
+                color: currentColor;
+                background-color: $brand-color;
+                padding: 10px 45px;
+                margin-bottom: 20px;
             }
         }
     }

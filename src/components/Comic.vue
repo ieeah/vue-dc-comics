@@ -20,8 +20,7 @@ export default {
 
 <style scoped lang="scss">
 .comic_card {
-    padding: 20px;
-    width: calc(100% / 6);
+    margin-bottom: 10px;
     .comic_cover {
         width: 100%;
         aspect-ratio: 1 / 1;
@@ -30,6 +29,7 @@ export default {
             height: 100%;
             object-fit: cover;
             object-position: top left;
+            margin-block: 15px;
         }
     }
 }
