@@ -3,13 +3,33 @@
     <div class="jumbo">
       <img src="@/assets/img/jumbotron.jpg" alt="">
     </div>
-    <section class="current_series"></section>
+    <section class="container current_series">
+      <div class="floating_title">
+        <h2>CURRENT SERIES</h2>
+      </div>
+      <ul>
+        <li v-for="(magazine, i) in CurrentSeries" :key="`magazine_${i}`">
+          <Comiccard :url="magazine.thumb" :title="magazine.series"/>
+        </li>
+      </ul>
+    </section>
   </section>
 </template>
 
 <script>
+import Comicslist from '@/assets/Js/dc-comics.js';
+import Comiccard from '@/components/Comic.vue';
 export default {
   name: 'MainSection',
+  components: {
+    Comiccard,
+  },
+
+  data() {
+    return {
+      CurrentSeries: Comicslist,
+    };
+  },
 }
 </script>
 
@@ -21,7 +41,6 @@ export default {
           color: white;
           .jumbo {
             height: 400px;
-            background-color: yellow;
             img {
               height: 100%;
               width: 100%;
@@ -30,9 +49,23 @@ export default {
             }
           }
 
-        .container {
+        .container.current_series {
+          display: flex;
           margin-inline: auto;
           width: 70%;
+          height: 150px;
+          background-color: yellow;
+            .floating_title {
+              background-color: $brand-color;
+              padding: 8px 20px;
+              height: 60px;
+              width: 230px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              font-size: 1.3rem;
+              transform: translateX(-20px) translateY(-85%);
+            }
         }
     }
 </style>
