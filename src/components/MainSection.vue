@@ -1,8 +1,9 @@
 <template>
   <section class="container_full">
-    <section class="container">
-      <h2> --> Content goes here </h2>
-    </section>
+    <div class="jumbo">
+      <img src="@/assets/img/jumbotron.jpg" alt="">
+    </div>
+    <section class="current_series"></section>
   </section>
 </template>
 
@@ -14,11 +15,20 @@ export default {
 
 <style scoped lang="scss">
 @import '@/styles/vars.scss';
-    section {
-        width: 100%;
-        background-color: black;
-        height: 150px;
-        color: white;
+    .container_full {
+          width: 100vw;
+          background-color: black;
+          color: white;
+          .jumbo {
+            height: 400px;
+            background-color: yellow;
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              object-position: top left;
+            }
+          }
 
         .container {
           margin-inline: auto;

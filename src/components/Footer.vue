@@ -1,6 +1,6 @@
 <template>
   <div class="container_full">
-      <div class="container">
+      <div class="container footer">
           <div class="col">
             <h3>DC COMICS</h3>
             <ul>
@@ -43,30 +43,30 @@
               <a class="sign_button">SIGN-UP NOW!</a>
               <div class="footer_socials">
                   <ul>
-                    <li></li>
+                    <li><a href="" id="follow_us">FOLLOW US</a></li>
                     <li>
                         <a href="">
-                            <img src="../assets/dc-comics-assets/img/footer/footer-facebook.png" alt="">
+                            <img src="@/assets/img/footer/footer-facebook.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="../assets/dc-comics-assets/img/footer/footer-twitter.png" alt="">
+                            <img src="@/assets/img/footer/footer-twitter.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="../assets/dc-comics-assets/img/footer/footer-youtube.png" alt="">
+                            <img src="@/assets/img/footer/footer-youtube.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="../assets/dc-comics-assets/img/footer/footer-pinterest.png" alt="">
+                            <img src="@/assets/img/footer/footer-pinterest.png" alt="">
                         </a>
                     </li>
                     <li>
                         <a href="">
-                            <img src="../assets/dc-comics-assets/img/footer/footer-periscope.png" alt="">
+                            <img src="@/assets/img/footer/footer-periscope.png" alt="">
                         </a>
                     </li>
                   </ul>
@@ -217,7 +217,6 @@ export default {
                     current: false,
                 },
             ],
-            footerSocials: ['footer-facebook.png', 'footer-twitter.png', 'footer-youtube.png', 'footer-pinterest.png', 'footer-periscope.png'],
             currentPage: 0,
         };
     },
@@ -235,7 +234,7 @@ export default {
 
 }
 
-.container {
+.container.footer {
     display: flex;
     margin-inline: auto;
     justify-content: center;
@@ -294,17 +293,18 @@ export default {
     width: 100%;
     
     .container {
-        padding-block: 35px;
+        display: flex;
+        align-items: center;
         justify-content: space-between;
+        padding-block: 35px;
         a.sign_button {
             display: flex;
             align-items: center;
             text-align: center;
             height: fit-content;
             background-color: transparent;
-            border: 2px solid #0282f9;
+            border: 2px solid $brand_color;
             padding: 7px 17px;
-            color: white;
             cursor: pointer;
             transition: all .1s ease;
             &:hover {
@@ -314,14 +314,31 @@ export default {
         }
     }
     .footer_socials {
-        li {
-        display: inline-block;
-        margin-left:15px;
-
-        a:hover {
-            filter: brightness(150%);
+        display: flex;
+        ul {
+            display: flex;
+            align-items: center;
+                li {
+                display: inline-block;
+                margin-left:15px;
+                #follow_us {
+                    font-size: 1.2rem;
+                    padding-right: 10px;
+                    font-weight: 400;
+                    color: $brand-color;
+                }
+                a {
+                    color: lightgrey;
+                    text-decoration: none;
+                    font-weight: 200;
+                    text-transform: capitalize;
+                    &:hover {
+                    filter: brightness(150%);
+                }
+                }
+            }
         }
-        }
+        
     }
 }
 </style>

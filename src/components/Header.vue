@@ -1,7 +1,7 @@
 <template>
     <section class="container">
         <a class="brand" href="/">
-            <img src="@/assets/dc-comics-assets/img/header/dc-logo.png" alt="">
+            <img src="@/assets/img/dc-logo.png" alt="">
         </a>
         <nav>
             <ul>
