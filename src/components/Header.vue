@@ -77,6 +77,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/vars.scss';
     .container {
         display: flex;
         justify-content: space-between;
@@ -103,16 +104,16 @@ export default {
                 align-items: center;
                 text-transform: uppercase;
                 height: 100%;
-                margin-inline: 10px;
                 border-bottom: 3px solid transparent;
                 &:hover,
                 &:active {
-                    border-bottom-color: #0282f9;
+                    border-bottom-color: $brand_color;
                     cursor: pointer;
                 }
                 a {
                     text-decoration: none;
                     color: currentColor;
+                    
                 }
             }
         }

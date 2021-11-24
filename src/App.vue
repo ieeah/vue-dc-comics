@@ -2,26 +2,26 @@
   <div id="app">
       <Header />
       <main>
-        <Main_Section />
+        <MainSection />
+        <Merchbar />
       </main>
-      <Shopbar />
       <Footer />
   </div>
 </template>
 
 <script>
 import Header from './components/Header.vue';
-import Main_Section from './components/Main_Section.vue';
+import MainSection from './components/MainSection.vue';
 import Footer from './components/Footer.vue';
-import Shopbar from './components/Shopbar.vue';
+import Merchbar from '@/components/Merchbar.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
-    Main_Section,
+    MainSection,
     Footer,
-    Shopbar,
+    Merchbar,
   },
 }
 </script>

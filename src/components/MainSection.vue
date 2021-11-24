@@ -8,11 +8,12 @@
 
 <script>
 export default {
-  name: 'Footer',
+  name: 'MainSection',
 }
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/vars.scss';
     section {
         width: 100%;
         background-color: black;

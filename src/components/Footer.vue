@@ -225,9 +225,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/styles/vars.scss';
 .container_full {
     width: 100%;
-    background-image: url(../assets/dc-comics-assets/img/footer/footer-bg.jpg);
+    background-image: url(../assets/img/footer/footer-bg.jpg);
     background-size: cover;
     background-position: center;
     color: white;
@@ -240,7 +241,7 @@ export default {
     justify-content: center;
     overflow: hidden;
     h3 {
-        font-weight: 300;
+        font-weight: 400;
     }
 
     ul {
@@ -248,10 +249,15 @@ export default {
         li {
         display: block;
             a {
-                color: grey;
+                color: lightgrey;
                 text-decoration: none;
                 font-weight: 200;
                 text-transform: capitalize;
+                font-size: .85rem;
+
+                &:hover {
+                    color: white;
+                }
             }
         }
     }
@@ -271,11 +277,11 @@ export default {
             width: 100%;
             height: 120%;
             position: absolute;
+            bottom: 0%;
             right: -25%;
-            top: -10%;
-            background-image:url(../assets/dc-comics-assets/img/footer/dc-logo-bg.png);
+            background-image:url(../assets/img/footer/dc-logo-bg.png);
             background-repeat: no-repeat;
-            transform: scale(1.1);
+            transform: scale(1.15);
         }
     }
 }
