@@ -68,8 +68,6 @@ export default {
                     current: false,
                 },
             ],
-            merchBar: [],
-            footerLink: [],
             currentPage: 0,
         };
     },
@@ -102,7 +100,8 @@ export default {
                 height: 100%;
                 margin-inline: 10px;
                 border-bottom: 3px solid transparent;
-                &:hover {
+                &:hover,
+                &:active {
                     border-bottom-color: #0282f9;
                     cursor: pointer;
                 }
