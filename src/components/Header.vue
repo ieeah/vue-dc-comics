@@ -1,14 +1,16 @@
 <template>
     <section class="container">
-      <img src="@/assets/dc-comics-assets/img/header/dc-logo.png" alt="">
-      <nav>
-          <ul>
-              <li class="nav_link" v-for="(link, index) in navLinks" :key="`nav_link-${index}`">
-                  <a :href="`${link.url}`">{{link.text}}</a>
-              </li>
-          </ul>
-      </nav>
-  </section>
+        <a class="brand" href="/">
+            <img src="@/assets/dc-comics-assets/img/header/dc-logo.png" alt="">
+        </a>
+        <nav>
+            <ul>
+                <li class="nav_link" v-for="(link, index) in navLinks" :key="`nav_link-${index}`">
+                    <a :href="`${link.url}`">{{link.text}}</a>
+                </li>
+            </ul>
+        </nav>
+    </section>
 </template>
 
 <script>
@@ -79,8 +81,11 @@ export default {
         display: flex;
         justify-content: space-between;
         height: 100px;
-        img {
-            padding-block: 15px;
+        a.brand {
+            img {
+                padding-block: 15px;
+                height: 100%;
+            }
         }
 
         nav {

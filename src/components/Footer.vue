@@ -4,7 +4,7 @@
           <div class="col">
             <h3>DC COMICS</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerLinkLeft" :key="`nav_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerLinkLeft" :key="`col_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
@@ -21,7 +21,7 @@
           <div class="col">
             <h3>DC</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerLinkRight" :key="`nav_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerLinkRight" :key="`col_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
@@ -29,7 +29,7 @@
           <div class="col">
             <h3>SITES</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerSites" :key="`nav_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerSites" :key="`col_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
@@ -40,7 +40,37 @@
       </div>
       <div class="sub_footer">
           <div class="container">
-              
+              <a class="sign_button">SIGN-UP NOW!</a>
+              <div class="footer_socials">
+                  <ul>
+                    <li></li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/dc-comics-assets/img/footer/footer-facebook.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/dc-comics-assets/img/footer/footer-twitter.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/dc-comics-assets/img/footer/footer-youtube.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/dc-comics-assets/img/footer/footer-pinterest.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="../assets/dc-comics-assets/img/footer/footer-periscope.png" alt="">
+                        </a>
+                    </li>
+                  </ul>
+              </div>
           </div>
       </div>
   </div>
@@ -187,6 +217,7 @@ export default {
                     current: false,
                 },
             ],
+            footerSocials: ['footer-facebook.png', 'footer-twitter.png', 'footer-youtube.png', 'footer-pinterest.png', 'footer-periscope.png'],
             currentPage: 0,
         };
     },
@@ -194,59 +225,97 @@ export default {
 </script>
 
 <style scoped lang="scss">
-    .container_full {
-        width: 100%;
-        background-image: url(../assets/dc-comics-assets/img/footer/footer-bg.jpg);
-        background-size: cover;
-        background-position: center;
-        color: white;
+.container_full {
+    width: 100%;
+    background-image: url(../assets/dc-comics-assets/img/footer/footer-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
 
+}
+
+.container {
+    display: flex;
+    margin-inline: auto;
+    justify-content: center;
+    overflow: hidden;
+    h3 {
+        font-weight: 300;
     }
 
-    .container {
-        display: flex;
+    ul {
+        margin-block: 10px;
+        li {
+        display: block;
+            a {
+                color: grey;
+                text-decoration: none;
+                font-weight: 200;
+                text-transform: capitalize;
+            }
+        }
+    }
+    
+    .col {
+        padding: 35px;
+        padding-left: 0;
+        width: calc(40% / 3);
+    }
+    
+    .col_right {
         margin-inline: auto;
-        justify-content: center;
-        overflow: hidden;
-        h3 {
-            font-weight: 300;
+        width: 60%;
+        position: relative;
+        &::after {
+            content: '';
+            width: 100%;
+            height: 120%;
+            position: absolute;
+            right: -25%;
+            top: -10%;
+            background-image:url(../assets/dc-comics-assets/img/footer/dc-logo-bg.png);
+            background-repeat: no-repeat;
+            transform: scale(1.1);
         }
+    }
+}
 
-        ul {
-            margin-block: 10px;
-            li {
-            display: block;
-                a {
-                    color: grey;
-                    text-decoration: none;
-                    font-weight: 200;
-                    text-transform: capitalize;
-                }
-            }
-        }
-        
-        .col {
-            padding: 35px;
-            padding-left: 0;
-            width: calc(40% / 3);
-        }
-        
-        .col_right {
-            margin-inline: auto;
-            width: 60%;
-            position: relative;
-            &::after {
-                content: '';
-                width: 100%;
-                height: 120%;
-                position: absolute;
-                right: -25%;
-                top: -10%;
-                background-image:url(../assets/dc-comics-assets/img/footer/dc-logo-bg.png);
-                background-repeat: no-repeat;
-                transform: scale(1.1);
+.sub_footer {
+    background-color: #303030;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+    .container {
+        padding-block: 35px;
+        justify-content: space-between;
+        a.sign_button {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            height: fit-content;
+            background-color: transparent;
+            border: 2px solid #0282f9;
+            padding: 7px 17px;
+            color: white;
+            cursor: pointer;
+            transition: all .1s ease;
+            &:hover {
+                background-color: rgba($color: white, $alpha: .2);
+                border-color: white;
             }
         }
     }
+    .footer_socials {
+        li {
+        display: inline-block;
+        margin-left:15px;
 
+        a:hover {
+            filter: brightness(150%);
+        }
+        }
+    }
+}
 </style>
