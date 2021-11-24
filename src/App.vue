@@ -4,7 +4,7 @@
       <main>
         <Main_Section />
       </main>
-
+      <Shopbar />
       <Footer />
   </div>
 </template>
@@ -13,6 +13,7 @@
 import Header from './components/Header.vue';
 import Main_Section from './components/Main_Section.vue';
 import Footer from './components/Footer.vue';
+import Shopbar from './components/Shopbar.vue';
 
 export default {
   name: 'App',
@@ -20,6 +21,7 @@ export default {
     Header,
     Main_Section,
     Footer,
+    Shopbar,
   },
 }
 </script>

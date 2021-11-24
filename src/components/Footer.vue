@@ -4,7 +4,7 @@
           <div class="col">
             <h3>DC COMICS</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerLinkLeft" :key="`col_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerLinkLeft" :key="`col1_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
@@ -21,7 +21,7 @@
           <div class="col">
             <h3>DC</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerLinkRight" :key="`col_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerLinkRight" :key="`col2_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
@@ -29,7 +29,7 @@
           <div class="col">
             <h3>SITES</h3>
             <ul>
-                <li class="foot_link" v-for="(link, index) in footerSites" :key="`col_link-${index}`">
+                <li class="foot_link" v-for="(link, index) in footerSites" :key="`col3_link-${index}`">
                     <a :href="`${link.url}`">{{link.text}}</a>
                 </li>
             </ul>
